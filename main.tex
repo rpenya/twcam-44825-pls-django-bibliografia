@@ -1,12 +1,12 @@
 % arara: llmk: { clean: partial }
-% arara: clean: { extensions: [lol,acn,xdf] }
+% arara: clean: { extensions: [lol,acn,xdf,xdy] }
 % arara: latexmk: { engine: pdflatex, clean: partial }
 % arara: pdflatex
 % arara: biber
 % arara: pdflatex
 % arara: pdflatex
 % arara: llmk: { clean: partial }
-% arara: clean: { extensions: [lol,acn,xdf] }
+% arara: clean: { extensions: [lol,acn,xdf,xdy] }
 % arara: latexmk: { engine: pdflatex, clean: partial }
 \documentclass{article}
 
@@ -82,7 +82,9 @@
 
 \printbibliography[keyword={T3},title={TEMA 3: API REST en \simpleicon{django}ango},heading=bibintoc]
 
-%\printbibliography[keyword={Taller5-1},title={Taller 5.1: Visual Studio Code + Maven + WildFly},heading=subbibintoc]
+\clearpage
+
+\printbibliography[keyword={T4},title={TEMA 4: \simpleicon{django}ango Channels},heading=bibintoc]
 
 %\clearpage
 
