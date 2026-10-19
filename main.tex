@@ -1,0 +1,130 @@
+% arara: llmk: { clean: partial }
+% arara: clean: { extensions: [lol,acn,xdf] }
+% arara: latexmk: { engine: pdflatex, clean: partial }
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
+% arara: llmk: { clean: partial }
+% arara: clean: { extensions: [lol,acn,xdf] }
+% arara: latexmk: { engine: pdflatex, clean: partial }
+\documentclass{article}
+
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{datetime}
+\usepackage{fontawesome5}
+\usepackage{simpleicons}
+\usepackage[colorlinks=true, linkcolor = black, citecolor = black, filecolor=black, urlcolor=magenta]{hyperref}
+\usepackage{tabularx}
+
+%\usepackage[sorting=none,style=ieee]{biblatex}
+%\usepackage[sorting=ydnt,bibstyle=reading,entryhead=true,natbib=true,citestyle=numeric]{biblatex}
+\usepackage[sorting=none,bibstyle=reading,citestyle=draft,entryhead=true,natbib=true,defernumbers=true,maxbibnames=99]{biblatex}
+
+\addbibresource{references.bib}
+\usepackage{doi}
+
+\usepackage[toc,section=section,numberedsection,xindy,style=altlist,numberline,savewrites=true,acronym]{glossaries}
+
+\title{Bibliografía de Programación del lado del servidor}
+
+\author{Raúl Peña-Ortiz, \href{mailto:raul.penya@uv.es}{raul.penya@uv.es}}
+
+\nocite{*}
+
+\makeatletter
+\makeglossaries
+\loadglsentries{acronyms}
+\glsenableentrycount
+\makeatletter
+
+\renewbibmacro*{entryhead:full}{
+\hfill \vspace{0.25cm}}
+
+\begin{document}
+
+\def\listtablename{\'Indice de tablas}%
+\def\tablename{Tabla}% 
+
+
+\newdate{lastUpdateAt}{19}{10}{2026}
+\date{\displaydate{lastUpdateAt}}
+
+\maketitle
+
+\vspace{0.5cm}
+
+\noindent\hrulefill
+\begin{abstract}
+    Documento de trabajo de la bibliografía usada para {\bf\simpleicon{django}ango} en la asignatura \href{http://www.uv.es/fatwirepub/Satellite/universitat/es/asignaturas-1286006061961.html?idA=44825&idT=2234;2027}{Programación del lado del servidor (44825)} del \href{https://www.uv.es/twcam}{Máster oficial en \cgls{twcam}} de la \href{http://www.uv.es/etse}{\cgls{etse}},  \href{http://www.uv.es}{\cgls{uv}}.
+\end{abstract}
+\hrulefill
+
+\vspace{1cm}
+
+\tableofcontents
+
+%\printbibliography
+
+\clearpage
+
+\printbibliography[keyword={T1},title={TEMA 1: Introducción a las aplicaciones web},heading=bibintoc]
+
+\clearpage
+
+\printbibliography[keyword={T2},title={TEMA 2: Aplicaciones web monolíticas en \simpleicon{django}ango},heading=bibintoc]
+
+\clearpage
+
+\printbibliography[keyword={T3},title={TEMA 3: API REST en \simpleicon{django}ango},heading=bibintoc]
+
+%\printbibliography[keyword={Taller5-1},title={Taller 5.1: Visual Studio Code + Maven + WildFly},heading=subbibintoc]
+
+%\clearpage
+
+%\printbibliography[keyword={Taller5-2},title={Taller 5.2: API REST con Servlets},heading=subbibintoc]
+
+%\clearpage
+
+%\printbibliography[keyword={Taller5-3},title={Taller 5.3: Filtros JavaEE},heading=subbibintoc]
+
+%\printbibliography[filter={tutorialORTaller5-3},title={Taller 5.3: API REST con Servlets},heading=subbibintoc]
+
+%\clearpage
+
+%\defbibfilter{tutorialORTaller5-3}{%
+%    keyword=tutorial or keyword=Taller5-2
+%}
+
+
+
+%\clearpage
+
+%\printbibliography[keyword={Taller5-3},title={Taller 5.3: Filtros J2EE},heading=subbibintoc]
+
+%\clearpage
+
+%\printbibliography[keyword={T6},title={TEMA 6: Desarrollo de aplicaciones web con Django},heading=bibintoc]
+
+%\printbibliography[keyword={Taller6-1},title={Taller 6.1 - Django},heading=subbibintoc]
+
+%\printbibliography[keyword={Taller6-2},title={Taller 6.2 - API REST con Django},heading=subbibintoc]
+
+%\clearpage
+
+%\printbibliography[keyword={T7},title={TEMA 7: Websockets},heading=bibintoc]
+
+%\printbibliography[keyword={Taller7-1},title={Taller 7.1 - WebSockets con J2EE},heading=subbibintoc]
+%\printbibliography[keyword={Taller7-2},title={Taller 7.2 - WebSockets con Django Channels},heading=subbibintoc]
+
+%\printglossaries
+
+%\printglossary[type=\acronymtype,title={Acrónimos}]
+
+%\printglossary[type=main, title={Glosario de términos}]
+
+\end{document}
